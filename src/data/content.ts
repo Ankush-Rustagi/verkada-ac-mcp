@@ -1,4 +1,4 @@
-import type { DomainColor } from "@/data/brand"
+import type { DomainColor } from "@/data/theme"
 
 export const BUILDER_NAME = "Jake Leichtling"
 export const BUILDER_EMAIL = "jake.leichtling@verkada.com"
@@ -8,7 +8,99 @@ export const GITHUB_TREE =
 
 export const API_DOCS = "https://apidocs.verkada.com/reference/access-user-guide"
 
-export type { DomainColor } from "@/data/brand"
+export type PageIntroSection = { title: string; blurb: string }
+
+export type PageIntro = {
+  tabLabel: string
+  summary: string
+  toolsNote: string
+  sections: PageIntroSection[]
+}
+
+export type HubPage = "home" | "tools" | "technical" | "setup"
+
+export const HOME_PAGE_INTRO: PageIntro = {
+  tabLabel: "Home",
+  toolsNote: "24 tools, credentials stay on your machine",
+  summary:
+    "Product-oriented tour: example workflows in Cursor and how chat turns into Access Control API calls.",
+  sections: [
+    {
+      title: "What you can do",
+      blurb: "Six workflows (onboarding, door changes, audits, and more). Pick a card to see the typical tool chain.",
+    },
+    {
+      title: "How it works",
+      blurb: "Five steps from chat to Verkada API. Credentials and confirmation gates stay on your laptop.",
+    },
+  ],
+}
+
+export const TOOLS_PAGE_INTRO: PageIntro = {
+  tabLabel: "Tool inventory",
+  toolsNote: "24 tools across five API domains",
+  summary: "Complete catalog of MCP tools with a domain breakdown chart and per-tool descriptions.",
+  sections: [
+    {
+      title: "By domain",
+      blurb: "Pie chart and legend for users, doors, groups, credentials, and access levels.",
+    },
+    {
+      title: "Tool list",
+      blurb: "Every tool name and what it does, grouped under its Access Control API area.",
+    },
+  ],
+}
+
+export const TECH_PAGE_INTRO: PageIntro = {
+  tabLabel: "Technical",
+  toolsNote: "TypeScript MCP v0.1, not hosted by Verkada",
+  summary:
+    "Implementation reference: scope, source layout, and the request path with file-level notes.",
+  sections: [
+    {
+      title: "Overview",
+      blurb: "What verkada-ac-mcp covers, what is out of scope, and where the source lives in docs-vibes.",
+    },
+    {
+      title: "Server internals",
+      blurb: "File-by-file map (index, client, tools, skills) and how each piece connects to the REST APIs.",
+    },
+    {
+      title: "How it works (detail)",
+      blurb: "Same end-to-end flow as Home, with implementation notes per step (MCP, JWT cache, tool routing).",
+    },
+  ],
+}
+
+export const SETUP_PAGE_INTRO: PageIntro = {
+  tabLabel: "Setup",
+  toolsNote: "Local install only",
+  summary: "Copy-paste steps to build the server, add credentials, and register it in Cursor.",
+  sections: [
+    {
+      title: "Install and build",
+      blurb: "Clone docs-vibes path, npm install, and npm run build for dist/index.js.",
+    },
+    {
+      title: "Credentials",
+      blurb: "VERKADA_API_KEY and VERKADA_ORG_ID in .env from Command Admin.",
+    },
+    {
+      title: "Wire MCP",
+      blurb: "mcp.json entry, agent safety rails, and link to official Access Control API docs.",
+    },
+  ],
+}
+
+export const PAGE_INTROS: Record<HubPage, PageIntro> = {
+  home: HOME_PAGE_INTRO,
+  tools: TOOLS_PAGE_INTRO,
+  technical: TECH_PAGE_INTRO,
+  setup: SETUP_PAGE_INTRO,
+}
+
+export type { DomainColor } from "@/data/theme"
 
 export type ToolEntry = { name: string; desc: string }
 
@@ -227,4 +319,4 @@ export const MCP_CONFIG_SNIPPET = `"verkada-ac": {
   }
 }`
 
-export { HUB_GRADIENT, DOMAIN_PIE_FILL, AC_PRIMARY } from "@/data/brand"
+export { HUB_GRADIENT, DOMAIN_PIE_FILL, AC_PRIMARY } from "@/data/theme"
