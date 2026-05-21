@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 export function HowItWorks({ showDetail = false }: { showDetail?: boolean }) {
   return (
     <div>
-      <p className="text-sm text-muted-foreground mb-6 max-w-prose">
+      <p className="text-sm text-muted-foreground mb-6 max-w-prose leading-relaxed">
         End-to-end path from a chat message to a live Access Control change. Each step runs on your
         machine until the final API call reaches Verkada.
       </p>
@@ -15,7 +15,7 @@ export function HowItWorks({ showDetail = false }: { showDetail?: boolean }) {
           return (
             <li key={step.title} className="flex gap-4">
               <div className="flex flex-col items-center w-9 shrink-0">
-                <span className="flex size-8 items-center justify-center rounded-full bg-violet-600 text-sm font-bold text-white">
+                <span className="flex size-8 items-center justify-center rounded-full border border-border bg-muted text-sm font-bold text-foreground">
                   {i + 1}
                 </span>
                 {!isLast && (

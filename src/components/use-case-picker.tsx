@@ -41,18 +41,11 @@ function UseCaseCard({
         CARD_MIN_H,
         "bg-card hover:border-foreground/25",
         selected
-          ? "border-violet-500 shadow-[inset_3px_0_0_0] shadow-violet-500"
+          ? "border-foreground/40 bg-muted/30 ring-1 ring-foreground/15"
           : "border-border",
       )}
     >
-      <p
-        className={cn(
-          "text-sm font-semibold leading-snug mb-1.5",
-          selected ? "text-violet-300" : "text-foreground",
-        )}
-      >
-        {uc.title}
-      </p>
+      <p className="text-sm font-semibold leading-snug mb-1.5 text-foreground">{uc.title}</p>
       <p className="text-xs text-muted-foreground leading-relaxed min-h-[2.5rem] mb-2">
         {uc.hook}
       </p>
@@ -71,9 +64,9 @@ export function TypicalFlowPanel({ useCaseId }: { useCaseId: string }) {
       <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
         <div>
           <h3 className="text-lg font-semibold mb-1">Typical flow: {uc.title}</h3>
-          <p className="text-sm text-muted-foreground max-w-prose">{uc.summary}</p>
+          <p className="text-sm text-muted-foreground max-w-prose leading-relaxed">{uc.summary}</p>
         </div>
-        <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-2.5 py-1 text-xs text-violet-300">
+        <span className="rounded-full border border-border bg-muted/50 px-2.5 py-1 text-xs text-muted-foreground">
           {uc.persona}
         </span>
       </div>
@@ -84,7 +77,7 @@ export function TypicalFlowPanel({ useCaseId }: { useCaseId: string }) {
             key={i}
             className="flex gap-3 rounded-lg border border-border bg-muted/20 p-3.5"
           >
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-violet-600 text-xs font-bold text-white">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border bg-muted text-xs font-bold text-foreground">
               {i + 1}
             </span>
             <code className="text-xs leading-relaxed text-foreground/90 pt-1">{step}</code>

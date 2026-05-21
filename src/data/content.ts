@@ -225,21 +225,23 @@ export const MCP_CONFIG_SNIPPET = `"verkada-ac": {
   }
 }`
 
+/** Matches Ankush-Rustagi.github.io GRADIENTS.cursor (hub card theme). */
 export const HUB_GRADIENT =
   "radial-gradient(ellipse 70% 60% at 25% 25%, oklch(0.55 0.22 290 / 0.9), transparent), radial-gradient(ellipse 60% 50% at 80% 80%, oklch(0.65 0.22 340 / 0.7), transparent), linear-gradient(135deg, oklch(0.22 0.08 290), oklch(0.2 0.1 320))"
 
+/** Chart swatches aligned with hub semantic palette (sky, emerald, teal, AC orange, red). */
 export const DOMAIN_SWATCH: Record<DomainColor, string> = {
   blue: "bg-sky-500",
   green: "bg-emerald-500",
-  purple: "bg-violet-500",
+  purple: "bg-teal-500",
   orange: "bg-amber-500",
-  red: "bg-rose-500",
+  red: "bg-red-500/80",
 }
 
 export const DOMAIN_PIE_FILL: Record<DomainColor, string> = {
-  blue: "#38bdf8",
-  green: "#34d399",
-  purple: "#a78bfa",
-  orange: "#fbbf24",
-  red: "#fb7185",
+  blue: "#4FBBE5",
+  green: "#14BA74",
+  purple: "#0FC0B5",
+  orange: "#FF8A3D",
+  red: "#DA5959",
 }

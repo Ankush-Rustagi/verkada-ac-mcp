@@ -24,7 +24,7 @@ export function ToolInventory() {
           <section key={domain.label}>
             <div className="flex flex-wrap items-center gap-2 mb-3">
               <span className={cn("size-4 rounded-sm", DOMAIN_SWATCH[domain.color])} />
-              <h4 className="text-sm font-bold">{domain.label}</h4>
+              <h4 className="text-sm font-bold text-foreground">{domain.label}</h4>
               <span className="text-[10px] text-muted-foreground border border-border rounded-full px-2 py-0.5">
                 {domain.tools.length} tools
               </span>
@@ -32,7 +32,7 @@ export function ToolInventory() {
             <ul className="space-y-2.5 pl-6 border-l-2 border-border/60 ml-1">
               {domain.tools.map((tool) => (
                 <li key={tool.name} className="text-sm leading-relaxed pl-2">
-                  <code className="font-semibold text-violet-300/90 text-xs">{tool.name}</code>
+                  <code className="font-semibold text-foreground/90 text-xs">{tool.name}</code>
                   <span className="text-muted-foreground">: {tool.desc}</span>
                 </li>
               ))}
@@ -46,7 +46,7 @@ export function ToolInventory() {
 
 export function ToolInventoryIntro() {
   return (
-    <p className="text-sm text-muted-foreground mb-6">
+    <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
       {TOTAL_TOOLS} tools across five Access Control API domains. Chart and color key on the left;
       full tool list on the right.
     </p>
