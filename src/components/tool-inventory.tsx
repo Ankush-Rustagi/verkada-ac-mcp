@@ -23,20 +23,28 @@ export function ToolInventory() {
         </ul>
       </aside>
 
-      <div className="flex-1 min-w-0 space-y-4">
+      <div className="flex-1 min-w-0 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
         {TOOL_DOMAINS.map((domain) => {
           const style = DOMAIN_ACCENTS[domain.color]
           return (
-            <section key={domain.label}>
+            <section key={domain.label} className="min-w-0">
               <div className="flex items-center gap-2 mb-1.5">
-                <span className={cn("size-3 rounded-sm", style.swatchClass)} />
+                <span className={cn("size-3 rounded-sm shrink-0", style.swatchClass)} />
                 <h4 className="text-sm font-semibold text-foreground">{domain.label}</h4>
+                <span className="text-[10px] text-muted-foreground">({domain.tools.length})</span>
               </div>
-              <ul className={cn("space-y-1.5 pl-4 border-l-2 ml-0.5", style.borderTint)}>
+              <ul
+                className={cn(
+                  "grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-1.5 pl-3 border-l-2",
+                  style.borderTint,
+                )}
+              >
                 {domain.tools.map((tool) => (
-                  <li key={tool.name} className="text-xs leading-relaxed pl-1.5">
-                    <code className={cn("font-semibold", style.textClass)}>{tool.name}</code>
-                    <span className="text-muted-foreground">: {tool.desc}</span>
+                  <li key={tool.name} className="text-[11px] leading-snug pl-1 min-w-0">
+                    <code className={cn("font-semibold block break-all", style.textClass)}>
+                      {tool.name}
+                    </code>
+                    <span className="text-muted-foreground">{tool.desc}</span>
                   </li>
                 ))}
               </ul>
