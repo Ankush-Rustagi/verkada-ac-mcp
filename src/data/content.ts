@@ -1,3 +1,5 @@
+import type { DomainColor } from "@/data/brand"
+
 export const BUILDER_NAME = "Jake Leichtling"
 export const BUILDER_EMAIL = "jake.leichtling@verkada.com"
 
@@ -6,7 +8,7 @@ export const GITHUB_TREE =
 
 export const API_DOCS = "https://apidocs.verkada.com/reference/access-user-guide"
 
-export type DomainColor = "blue" | "green" | "purple" | "orange" | "red"
+export type { DomainColor } from "@/data/brand"
 
 export type ToolEntry = { name: string; desc: string }
 
@@ -19,7 +21,7 @@ export type ToolDomain = {
 export const TOOL_DOMAINS: ToolDomain[] = [
   {
     label: "Users",
-    color: "blue",
+    color: "green",
     tools: [
       { name: "get_access_users", desc: "List all users; optionally include visitors" },
       { name: "get_access_user", desc: "Get one user by user_id, external_id, or email" },
@@ -29,7 +31,7 @@ export const TOOL_DOMAINS: ToolDomain[] = [
   },
   {
     label: "Doors",
-    color: "green",
+    color: "orange",
     tools: [
       { name: "get_doors", desc: "List doors; filter by door_ids or site_ids" },
       { name: "unlock_door", desc: "Remotely unlock a door on behalf of a user" },
@@ -37,7 +39,7 @@ export const TOOL_DOMAINS: ToolDomain[] = [
   },
   {
     label: "Groups",
-    color: "purple",
+    color: "blue",
     tools: [
       { name: "get_access_groups", desc: "List all access groups" },
       { name: "get_access_group", desc: "Get one access group" },
@@ -50,7 +52,7 @@ export const TOOL_DOMAINS: ToolDomain[] = [
   },
   {
     label: "Credentials",
-    color: "orange",
+    color: "yellow",
     tools: [
       { name: "add_access_card", desc: "Add a card credential to a user" },
       { name: "activate_access_card", desc: "Activate a card credential" },
@@ -225,23 +227,4 @@ export const MCP_CONFIG_SNIPPET = `"verkada-ac": {
   }
 }`
 
-/** Matches Ankush-Rustagi.github.io GRADIENTS.cursor (hub card theme). */
-export const HUB_GRADIENT =
-  "radial-gradient(ellipse 70% 60% at 25% 25%, oklch(0.55 0.22 290 / 0.9), transparent), radial-gradient(ellipse 60% 50% at 80% 80%, oklch(0.65 0.22 340 / 0.7), transparent), linear-gradient(135deg, oklch(0.22 0.08 290), oklch(0.2 0.1 320))"
-
-/** Chart swatches aligned with hub semantic palette (sky, emerald, teal, AC orange, red). */
-export const DOMAIN_SWATCH: Record<DomainColor, string> = {
-  blue: "bg-sky-500",
-  green: "bg-emerald-500",
-  purple: "bg-teal-500",
-  orange: "bg-amber-500",
-  red: "bg-red-500/80",
-}
-
-export const DOMAIN_PIE_FILL: Record<DomainColor, string> = {
-  blue: "#4FBBE5",
-  green: "#14BA74",
-  purple: "#0FC0B5",
-  orange: "#FF8A3D",
-  red: "#DA5959",
-}
+export { HUB_GRADIENT, DOMAIN_PIE_FILL, AC_PRIMARY } from "@/data/brand"

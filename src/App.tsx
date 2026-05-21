@@ -2,6 +2,7 @@ import { useState } from "react"
 import { PageHeader } from "@/components/page-header"
 import { PageFooter } from "@/components/page-footer"
 import { TldrCard } from "@/components/tldr-card"
+import { BrandColorStrip } from "@/components/brand-color-strip"
 import { BuilderCreditBanner } from "@/components/builder-credit-banner"
 import { GithubSourceBanner } from "@/components/github-source-banner"
 import { UseCasePicker, TypicalFlowPanel } from "@/components/use-case-picker"
@@ -62,7 +63,7 @@ function HomePage({ onTechnical }: { onTechnical: () => void }) {
         <button
           type="button"
           onClick={onTechnical}
-          className="inline-flex items-center justify-center rounded-lg border border-border bg-foreground px-4 py-2 text-sm font-medium text-background hover:bg-foreground/90 transition-colors"
+          className="inline-flex items-center justify-center rounded-lg bg-[#FF8A3D] px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity"
         >
           Open technical and setup page
         </button>
@@ -189,7 +190,9 @@ export default function App() {
           ]}
         />
 
-        <BuilderCreditBanner className="mb-8" />
+        <BuilderCreditBanner className="mb-6" />
+
+        <BrandColorStrip className="mb-8" />
 
         <TldrCard
           title="TL;DR"
@@ -242,8 +245,8 @@ function TabButton({
       className={cn(
         "rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
         active
-          ? "bg-foreground text-background"
-          : "border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30",
+          ? "bg-[#FF8A3D] text-white"
+          : "border border-border text-muted-foreground hover:text-foreground hover:border-[#FF8A3D]/30",
       )}
     >
       {children}

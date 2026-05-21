@@ -1,4 +1,5 @@
 import { HOW_IT_WORKS_STEPS } from "@/data/content"
+import { AC_PRIMARY } from "@/data/brand"
 import { cn } from "@/lib/utils"
 
 export function HowItWorks({ showDetail = false }: { showDetail?: boolean }) {
@@ -15,11 +16,18 @@ export function HowItWorks({ showDetail = false }: { showDetail?: boolean }) {
           return (
             <li key={step.title} className="flex gap-4">
               <div className="flex flex-col items-center w-9 shrink-0">
-                <span className="flex size-8 items-center justify-center rounded-full border border-border bg-muted text-sm font-bold text-foreground">
+                <span
+                  className="flex size-8 items-center justify-center rounded-full text-sm font-bold text-white"
+                  style={{ backgroundColor: AC_PRIMARY }}
+                >
                   {i + 1}
                 </span>
                 {!isLast && (
-                  <span className="w-0.5 flex-1 min-h-6 my-1.5 bg-border" aria-hidden />
+                  <span
+                    className="w-0.5 flex-1 min-h-6 my-1.5"
+                    style={{ backgroundColor: `${AC_PRIMARY}55` }}
+                    aria-hidden
+                  />
                 )}
               </div>
               <div className={cn("pb-6 flex-1 min-w-0", isLast && "pb-0")}>
@@ -42,10 +50,10 @@ export function HowItWorks({ showDetail = false }: { showDetail?: boolean }) {
       </ol>
 
       <div className="flex flex-wrap gap-2 mt-4">
-        <span className="rounded-full border border-sky-500/30 bg-sky-500/10 px-2.5 py-1 text-[11px] text-sky-300">
+        <span className="rounded-full border border-[#0285C8]/30 bg-[#0285C8]/10 px-2.5 py-1 text-[11px] text-[#4FBBE5]">
           Credentials stay local
         </span>
-        <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[11px] text-amber-300">
+        <span className="rounded-full border border-[#F2B81A]/35 bg-[#F2B81A]/10 px-2.5 py-1 text-[11px] text-[#FFD959]">
           Writes need your OK
         </span>
       </div>
