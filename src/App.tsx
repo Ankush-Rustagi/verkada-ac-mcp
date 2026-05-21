@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils"
 const TABS: { id: HubPage; label: string }[] = [
   { id: "home", label: "Home" },
   { id: "tools", label: "AC MCP Tools" },
-  { id: "technical", label: "Technical" },
+  { id: "technical", label: "Tech" },
   { id: "setup", label: "Setup" },
 ]
 

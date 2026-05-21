@@ -53,7 +53,7 @@ export const TOOLS_PAGE_INTRO: PageIntro = {
 }
 
 export const TECH_PAGE_INTRO: PageIntro = {
-  tabLabel: "Technical",
+  tabLabel: "Tech",
   toolsNote: "TypeScript MCP v0.1, not hosted by Verkada",
   summary:
     "Implementation reference: scope, source layout, and the request path with file-level notes.",
