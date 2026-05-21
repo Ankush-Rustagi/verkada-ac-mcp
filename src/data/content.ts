@@ -23,7 +23,7 @@ export const HOME_PAGE_INTRO: PageIntro = {
   tabLabel: "Home",
   toolsNote: "24 tools, credentials stay on your machine",
   summary:
-    "Product-oriented tour: example workflows in Cursor and how chat turns into Access Control API calls.",
+    "Product-oriented tour: example workflows in a local AI assistant and how chat turns into Access Control API calls.",
   sections: [
     {
       title: "What you can do",
@@ -76,7 +76,8 @@ export const TECH_PAGE_INTRO: PageIntro = {
 export const SETUP_PAGE_INTRO: PageIntro = {
   tabLabel: "Setup",
   toolsNote: "Local install only",
-  summary: "Copy-paste steps to build the server, add credentials, and register it in Cursor.",
+  summary:
+    "Copy-paste steps to build the server, add credentials, and register it in Cursor, Claude Desktop, Copilot, or another MCP host.",
   sections: [
     {
       title: "Install and build",
@@ -88,7 +89,7 @@ export const SETUP_PAGE_INTRO: PageIntro = {
     },
     {
       title: "Wire MCP",
-      blurb: "mcp.json entry, agent safety rails, and link to official Access Control API docs.",
+      blurb: "MCP config for your local host, agent safety rails, and link to official Access Control API docs.",
     },
   ],
 }
@@ -256,7 +257,7 @@ export type HowItWorksStep = {
 export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
   {
     title: "You ask in natural language",
-    tag: "Cursor / Claude Desktop",
+    tag: "Cursor · Claude · Copilot",
     context:
       "You describe the outcome in chat: unlock a door, list users in a group, or audit who has access. The AI interprets intent and picks an MCP tool name plus arguments.",
     detail:
@@ -264,9 +265,9 @@ export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
   },
   {
     title: "MCP client spawns the local server",
-    tag: "~/.cursor/mcp.json",
+    tag: "MCP host config",
     context:
-      "Cursor (or another MCP host) starts verkada-ac-mcp as a child process over stdio. Your API key and org ID pass through the env block in config. Nothing runs on Verkada infrastructure.",
+      "Your local MCP host (Cursor, Claude Desktop, Copilot, or similar) starts verkada-ac-mcp as a child process over stdio. Your API key and org ID pass through the env block in config. Nothing runs on Verkada infrastructure.",
     detail: "command: node · args: dist/index.js · env: VERKADA_API_KEY, VERKADA_ORG_ID",
   },
   {

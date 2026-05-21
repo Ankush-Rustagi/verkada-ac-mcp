@@ -34,7 +34,7 @@ function HomePage() {
     <div className="space-y-4">
       <SectionBlock
         title="What you can do"
-        description="Six workflows in Cursor. Pick a card to see the tool chain."
+        description="Six workflows in your local AI assistant. Pick a card to see the tool chain."
       >
         <UseCasePicker selectedId={useCaseId} onSelect={setUseCaseId} />
         <div className="mt-3">
@@ -139,7 +139,7 @@ npm run build`}</CodeBlock>
           </p>
         </div>
         <div>
-          <h4 className="text-xs font-semibold mb-1.5">3. Wire MCP (Cursor)</h4>
+          <h4 className="text-xs font-semibold mb-1.5">3. Wire MCP (local host)</h4>
           <CodeBlock lang="json">{MCP_CONFIG_SNIPPET}</CodeBlock>
         </div>
       </div>
@@ -177,7 +177,7 @@ export default function App() {
       <main className="mx-auto max-w-6xl px-4 md:px-6 py-8 md:py-10">
         <PageHeader
           title="Access Control MCP"
-          subtitle="Talk to Verkada Access Control from Cursor: users, doors, groups, credentials, and schedules as MCP tools on public APIs."
+          subtitle="Talk to Verkada Access Control from any local AI assistant (Cursor, Claude Desktop, Copilot, and other MCP hosts): users, doors, groups, credentials, and schedules as MCP tools on public APIs."
           type="PM Hub · Tool"
           createdDate="May 20, 2026"
           modifiedDate="May 20, 2026"
