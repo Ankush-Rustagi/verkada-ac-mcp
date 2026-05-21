@@ -37,7 +37,7 @@ export const HOME_PAGE_INTRO: PageIntro = {
 }
 
 export const TOOLS_PAGE_INTRO: PageIntro = {
-  tabLabel: "Tool inventory",
+  tabLabel: "AC MCP Tools",
   toolsNote: "24 tools across five API domains",
   summary: "Complete catalog of MCP tools with a domain breakdown chart and per-tool descriptions.",
   sections: [

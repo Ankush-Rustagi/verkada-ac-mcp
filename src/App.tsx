@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils"
 
 const TABS: { id: HubPage; label: string }[] = [
   { id: "home", label: "Home" },
-  { id: "tools", label: "Tool inventory" },
+  { id: "tools", label: "AC MCP Tools" },
   { id: "technical", label: "Technical" },
   { id: "setup", label: "Setup" },
 ]
@@ -54,7 +54,7 @@ function HomePage() {
 
 function ToolsPage() {
   return (
-    <SectionBlock title="Tool inventory" description={`${TOTAL_TOOLS} tools across five API domains.`}>
+    <SectionBlock title="AC MCP Tools" description={`${TOTAL_TOOLS} tools across five API domains.`}>
       <ToolInventory />
     </SectionBlock>
   )
